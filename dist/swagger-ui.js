@@ -32000,6 +32000,10 @@ SwaggerUi.Views.ParameterView = Backbone.View.extend({
     var isParam = false;
 
     if( this.options.swaggerOptions.jsonEditor && this.model.isBody && this.model.schema){
+
+      // Make sure the editor shows a param name
+      this.model.schema.title = 'object';
+
       var $self = $(this.el);
       this.model.jsonEditor = 
         /* global JSONEditor */
