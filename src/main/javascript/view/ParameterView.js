@@ -63,6 +63,10 @@ SwaggerUi.Views.ParameterView = Backbone.View.extend({
     var isParam = false;
 
     if( this.options.swaggerOptions.jsonEditor && this.model.isBody && this.model.schema){
+
+      // Make sure the editor shows a param name
+      this.model.schema.title = 'object';
+
       var $self = $(this.el);
       this.model.jsonEditor = 
         /* global JSONEditor */
@@ -71,6 +75,7 @@ SwaggerUi.Views.ParameterView = Backbone.View.extend({
                         ajax:true, 
                         disable_properties:true, 
                         disable_edit_json:true,
+                        theme: 'foundation5',
                         iconlib: 'swagger' });
       // This is so that the signature can send back the sample to the json editor
       // TODO: SignatureView should expose an event "onSampleClicked" instead
