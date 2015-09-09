@@ -32182,7 +32182,7 @@ SwaggerUi.Views.SignatureView = Backbone.View.extend({
 
     $(this.el).html(Handlebars.templates.signature(this.model));
 
-    this.switchToDescription();
+    this.switchToSnippet();
 
     this.isParam = this.model.isParam;
 
