@@ -459,6 +459,14 @@
 .swagger-section .swagger-ui-wrap .required {
   font-weight: bold;
 }
+.swagger-section .swagger-ui-wrap td.required label:after,
+.swagger-section .swagger-ui-wrap .editor_holder label.required:after {
+  content: '*';
+  color: #D61313;
+  font-size: 0.5em;
+  position: relative;
+  top: -0.5em;
+}
 .swagger-section .swagger-ui-wrap .editor_holder {
   font-family: "Anonymous Pro", "Menlo", "Consolas", "Bitstream Vera Sans Mono", "Courier New", monospace;
   font-size: 0.9em;

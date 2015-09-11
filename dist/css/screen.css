@@ -459,6 +459,14 @@
 .swagger-section .swagger-ui-wrap .required {
   font-weight: bold;
 }
+.swagger-section .swagger-ui-wrap td.required label:after,
+.swagger-section .swagger-ui-wrap .editor_holder label.required:after {
+  content: '*';
+  color: #D61313;
+  font-size: 0.5em;
+  position: relative;
+  top: -0.5em;
+}
 .swagger-section .swagger-ui-wrap .editor_holder {
   font-family: "Anonymous Pro", "Menlo", "Consolas", "Bitstream Vera Sans Mono", "Courier New", monospace;
   font-size: 0.9em;
@@ -1221,6 +1229,9 @@
   margin-top: -4px;
   cursor: pointer;
 }
+.swagger-section .error {
+  color: #D61313;
+}
 .swagger-section #header {
   padding: 14px;
 }
@@ -1229,23 +1240,33 @@
   width: 106px;
   height: 39px;
 }
+.swagger-section #header .spec {
+  font-size: 0.8em;
+  color: #999;
+  line-height: 39px;
+}
+.swagger-section #header .spec,
 .swagger-section #header form#api_selector {
   display: block;
   clear: none;
   float: right;
 }
+.swagger-section #header .spec .input,
 .swagger-section #header form#api_selector .input {
   display: block;
   clear: none;
   float: left;
   margin: 0 10px 0 0;
 }
+.swagger-section #header .spec .input input#input_apiKey,
 .swagger-section #header form#api_selector .input input#input_apiKey {
   width: 200px;
 }
+.swagger-section #header .spec .input input#input_baseUrl,
 .swagger-section #header form#api_selector .input input#input_baseUrl {
   width: 400px;
 }
+.swagger-section #header .spec .input a#explore,
 .swagger-section #header form#api_selector .input a#explore {
   display: block;
   text-decoration: none;
@@ -1261,9 +1282,11 @@
   -khtml-border-radius: 4px;
   border-radius: 4px;
 }
+.swagger-section #header .spec .input a#explore:hover,
 .swagger-section #header form#api_selector .input a#explore:hover {
   background-color: #547f00;
 }
+.swagger-section #header .spec .input input,
 .swagger-section #header form#api_selector .input input {
   font-size: 0.9em;
   padding: 3px;

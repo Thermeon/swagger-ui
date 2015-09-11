@@ -1,30 +1,50 @@
 .swagger-section .swagger-ui-wrap .editor_holder p {
   font-family: sans-serif;
   font-size: inherit !important;
+  padding: 0 0 10px 6px;
 }
 .swagger-section .swagger-ui-wrap .editor_holder h3 {
-  padding-top: 0;
+  padding: 0px 0px 0px 6px;
+}
+.swagger-section .swagger-ui-wrap .editor_holder h3 .button-group {
+  margin: -3px 0px 1px 5px !important;
 }
 .swagger-section .swagger-ui-wrap .editor_holder .row {
   margin: 5px 0;
-  padding: 0 10px;
+  padding: 0 6px;
   background-color: #fcf6db;
   border: 1px solid #e5e0c6;
 }
 .swagger-section .swagger-ui-wrap .editor_holder .row h3 {
   padding-top: 10px;
 }
+.swagger-section .swagger-ui-wrap .editor_holder .row .row {
+  border: none;
+}
 .swagger-section .swagger-ui-wrap .editor_holder .row:first {
   margin: 0;
 }
 .swagger-section .swagger-ui-wrap .editor_holder .form-control {
-  margin-right: 5px;
+  display: table;
+  width: 100%;
+}
+.swagger-section .swagger-ui-wrap .editor_holder .form-control label,
+.swagger-section .swagger-ui-wrap .editor_holder .form-control input,
+.swagger-section .swagger-ui-wrap .editor_holder .form-control p,
+.swagger-section .swagger-ui-wrap .editor_holder .form-control select {
+  display: table-cell !important;
+}
+.swagger-section .swagger-ui-wrap .editor_holder .form-control input {
+  width: 88% !important;
+  margin-bottom: 0 !important;
 }
 .swagger-section .swagger-ui-wrap .editor_holder .form-control label {
-  padding: 0.6em 0 0.4em 0;
+  padding: 0.6em 0;
   font-size: 1.1em;
+  width: 25%;
 }
 .swagger-section .swagger-ui-wrap .editor_holder .form-control p {
-  color: #666;
   margin-top: 0 !important;
+  padding: 0;
+  width: 35%;
 }
