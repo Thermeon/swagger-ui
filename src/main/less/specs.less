@@ -360,6 +360,14 @@
         font-weight: bold;
     }
 
+    td.required label:after, .editor_holder label.required:after {
+        content: '*';
+        color: #D61313;
+        font-size: 0.5em;
+        position: relative;
+        top: -0.5em;
+    }
+
     /* JSONEditor specific styling */
     .editor_holder {
        font-family: "Anonymous Pro", "Menlo", "Consolas", "Bitstream Vera Sans Mono", "Courier New", monospace;
