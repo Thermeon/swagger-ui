@@ -276,7 +276,7 @@
   font-size: 25px;
 }
 .swagger-section .swagger-ui-wrap .footer {
-  margin-top: 20px;
+  margin-top: 40px;
 }
 .swagger-section .swagger-ui-wrap p.big,
 .swagger-section .swagger-ui-wrap div.big p {
@@ -289,27 +289,24 @@
 .swagger-section .swagger-ui-wrap form.fullwidth ol li.numeric input {
   width: 500px !important;
 }
-.swagger-section .swagger-ui-wrap .info_license {
-  padding-bottom: 5px;
-}
-.swagger-section .swagger-ui-wrap .info_tos {
-  padding-bottom: 5px;
-}
 .swagger-section .swagger-ui-wrap .message-fail {
   color: #cc0000;
-}
-.swagger-section .swagger-ui-wrap .info_url {
-  padding-bottom: 5px;
-}
-.swagger-section .swagger-ui-wrap .info_email {
-  padding-bottom: 5px;
-}
-.swagger-section .swagger-ui-wrap .info_name {
-  padding-bottom: 5px;
 }
 .swagger-section .swagger-ui-wrap .info_description {
   padding-bottom: 10px;
   font-size: 15px;
+}
+.swagger-section .swagger-ui-wrap #api_info {
+  margin-bottom: 20px;
+}
+.swagger-section .swagger-ui-wrap #info_table td {
+  border: none;
+  padding: 3px 6px 3px 0;
+}
+.swagger-section .swagger-ui-wrap #info_table tr td:first-child {
+  font-size: 0.8em;
+  color: #aaa;
+  vertical-align: bottom;
 }
 .swagger-section .swagger-ui-wrap .markdown ol li,
 .swagger-section .swagger-ui-wrap .markdown ul li {
