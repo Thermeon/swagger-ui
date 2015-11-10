@@ -28,7 +28,7 @@ window.SwaggerTranslator.learn({
     "Expand Operations":"展开操作",
     "Raw":"原始",
     "can't parse JSON.  Raw result":"无法解析JSON. 原始结果",
-    "Model Schema":"模型架构",
+    "Example":"示例",
     "Model":"模型",
     "apply":"应用",
     "Username":"用户名",

@@ -27,7 +27,7 @@ window.SwaggerTranslator.learn({
     "Expand Operations":"Expandir Operaciones",
     "Raw":"Crudo",
     "can't parse JSON.  Raw result":"no puede parsear el JSON.  Resultado crudo",
-    "Model Schema":"Esquema del Modelo",
+    "Example":"Ejemplo",
     "Model":"Modelo",
     "apply":"aplicar",
     "Username":"Nombre de usuario",

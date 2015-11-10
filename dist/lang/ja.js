@@ -28,7 +28,7 @@ window.SwaggerTranslator.learn({
     "Expand Operations":"操作の展開",
     "Raw":"Raw",
     "can't parse JSON.  Raw result":"JSONへ解釈できません.  未加工の結果",
-    "Model Schema":"モデルスキーマ",
+    "Example":"例",
     "Model":"モデル",
     "apply":"実行",
     "Username":"ユーザ名",

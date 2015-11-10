@@ -276,55 +276,50 @@ SwaggerUi.Views.OperationView = Backbone.View.extend({
   // Note: copied from CoffeeScript compiled file
   // TODO: redactor
   submitOperation: function(e) {
-    var error_free, form, isFileUpload, map, opts;
+    var error_fields, form, isFileUpload, map, opts;
     if (e !== null) {
       e.preventDefault();
     }
     form = $('.sandbox', $(this.el));
-    error_free = true;
+    error_fields = [];
     form.find('input.required').each(function() {
       $(this).removeClass('error');
       if (jQuery.trim($(this).val()) === '') {
         $(this).addClass('error');
-        $(this).wiggle({
-          callback: (function(_this) {
-            return function() {
-              $(_this).focus();
-            };
-          })(this)
-        });
-        error_free = false;
+        $(this).wiggle();
+        error_fields.push(this);
       }
     });
-    form.find('textarea.required').each(function() {
+    form.find('textarea.required:visible').each(function() {
       $(this).removeClass('error');
       if (jQuery.trim($(this).val()) === '') {
         $(this).addClass('error');
-        $(this).wiggle({
-          callback: (function(_this) {
-            return function() {
-              return $(_this).focus();
-            };
-          })(this)
-        });
-        error_free = false;
+        $(this).wiggle();
+        error_fields.push(this);
       }
     });
     form.find('select.required').each(function() {
       $(this).removeClass('error');
       if (this.selectedIndex === -1) {
         $(this).addClass('error');
-        $(this).wiggle({
-          callback: (function(_this) {
-            return function() {
-              $(_this).focus();
-            };
-          })(this)
-        });
-        error_free = false;
+        $(this).wiggle();
+        error_fields.push(this);
       }
     });
-    if (error_free) {
+    // Validate required JSONEditor fields
+    form.find('.editor_holder .required').each(function() {
+      var input = $(this).parent().find('input');
+      input.removeClass('error');
+      if (jQuery.trim(input.val()) === '') {
+        input.addClass('error');
+        input.wiggle();
+        error_fields.push(input);
+      }
+    });
+    if (error_fields.length){
+      $(error_fields[0]).focus();
+    }
+    else {
       map = this.getInputMap(form);
       isFileUpload = this.isFileUpload(form);
       opts = {
