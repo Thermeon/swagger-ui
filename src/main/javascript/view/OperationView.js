@@ -286,13 +286,7 @@ SwaggerUi.Views.OperationView = Backbone.View.extend({
       $(this).removeClass('error');
       if (jQuery.trim($(this).val()) === '') {
         $(this).addClass('error');
-        $(this).wiggle({
-          callback: (function(_this) {
-            return function() {
-              $(_this).focus();
-            };
-          })(this)
-        });
+        $(this).wiggle();
         error_free = false;
       }
     });
@@ -300,13 +294,7 @@ SwaggerUi.Views.OperationView = Backbone.View.extend({
       $(this).removeClass('error');
       if (jQuery.trim($(this).val()) === '') {
         $(this).addClass('error');
-        $(this).wiggle({
-          callback: (function(_this) {
-            return function() {
-              return $(_this).focus();
-            };
-          })(this)
-        });
+        $(this).wiggle();
         error_free = false;
       }
     });
@@ -314,16 +302,13 @@ SwaggerUi.Views.OperationView = Backbone.View.extend({
       $(this).removeClass('error');
       if (this.selectedIndex === -1) {
         $(this).addClass('error');
-        $(this).wiggle({
-          callback: (function(_this) {
-            return function() {
-              $(_this).focus();
-            };
-          })(this)
-        });
+        $(this).wiggle();
         error_free = false;
       }
     });
+    if (!error_free){
+      $('.error').first().focus();
+    }
     if (error_free) {
       map = this.getInputMap(form);
       isFileUpload = this.isFileUpload(form);
