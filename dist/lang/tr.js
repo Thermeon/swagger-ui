@@ -28,7 +28,7 @@ window.SwaggerTranslator.learn({
     "Expand Operations":"Operasyonları Aç",
     "Raw":"Ham",
     "can't parse JSON.  Raw result":"JSON çözümlenemiyor.  Ham sonuç",
-    "Model Schema":"Model Şema",
+    "Example":"Örnek",
     "Model":"Model",
     "apply":"uygula",
     "Username":"Kullanıcı Adı",

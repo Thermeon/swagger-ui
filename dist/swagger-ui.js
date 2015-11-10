@@ -491,7 +491,7 @@ this["Handlebars"]["templates"]["operation"] = Handlebars.template({"1":function
   buffer += "        </form>\n";
   stack1 = helpers['if'].call(depth0, (depth0 != null ? depth0.type : depth0), {"name":"if","hash":{},"fn":this.program(24, data),"inverse":this.noop,"data":data});
   if (stack1 != null) { buffer += stack1; }
-  buffer += "        <div class='response' style='display:none'>\n          <div class='block curl'></div>\n          <h4 data-sw-translate>Request URL</h4>\n          <div class='block request_url'></div>\n";
+  buffer += "        <div class='response' style='display:none'>\n          <h4 data-sw-translate>Example Request</h4>\n          <div class='block curl'></div>\n          <h4 data-sw-translate>Request URL</h4>\n          <div class='block request_url'></div>\n";
   stack1 = helpers['if'].call(depth0, (depth0 != null ? depth0.showRequestHeaders : depth0), {"name":"if","hash":{},"fn":this.program(26, data),"inverse":this.noop,"data":data});
   if (stack1 != null) { buffer += stack1; }
   return buffer + "          <h4 data-sw-translate>Response Body</h4>\n          <div class='block response_body'></div>\n          <h4 data-sw-translate>Response Code</h4>\n          <div class='block response_code'></div>\n          <h4 data-sw-translate>Response Headers</h4>\n          <div class='block response_headers'></div>\n        </div>\n      </div>\n    </li>\n  </ul>\n";
@@ -866,7 +866,7 @@ this["Handlebars"]["templates"]["response_content_type"] = Handlebars.template({
   return buffer + "</select>\n";
 },"useData":true});
 this["Handlebars"]["templates"]["signature"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
-  var stack1, helper, functionType="function", helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression, buffer = "<div>\n<ul class=\"signature-nav\">\n  <li><a class=\"description-link\" href=\"#\" data-sw-translate>Model</a></li>\n  <li><a class=\"snippet-link\" href=\"#\" data-sw-translate>Model Schema</a></li>\n</ul>\n<div>\n\n<div class=\"signature-container\">\n  <div class=\"description\">\n    ";
+  var stack1, helper, functionType="function", helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression, buffer = "<div>\n<ul class=\"signature-nav\">\n  <li><a class=\"description-link\" href=\"#\" data-sw-translate>Model</a></li>\n  <li><a class=\"snippet-link\" href=\"#\" data-sw-translate>Example</a></li>\n</ul>\n<div>\n\n<div class=\"signature-container\">\n  <div class=\"description\">\n    ";
   stack1 = ((helper = (helper = helpers.signature || (depth0 != null ? depth0.signature : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"signature","hash":{},"data":data}) : helper));
   if (stack1 != null) { buffer += stack1; }
   return buffer + "\n  </div>\n\n  <div class=\"snippet\">\n    <pre><code>"
@@ -31593,55 +31593,50 @@ SwaggerUi.Views.OperationView = Backbone.View.extend({
   // Note: copied from CoffeeScript compiled file
   // TODO: redactor
   submitOperation: function(e) {
-    var error_free, form, isFileUpload, map, opts;
+    var error_fields, form, isFileUpload, map, opts;
     if (e !== null) {
       e.preventDefault();
     }
     form = $('.sandbox', $(this.el));
-    error_free = true;
+    error_fields = [];
     form.find('input.required').each(function() {
       $(this).removeClass('error');
       if (jQuery.trim($(this).val()) === '') {
         $(this).addClass('error');
-        $(this).wiggle({
-          callback: (function(_this) {
-            return function() {
-              $(_this).focus();
-            };
-          })(this)
-        });
-        error_free = false;
+        $(this).wiggle();
+        error_fields.push(this);
       }
     });
-    form.find('textarea.required').each(function() {
+    form.find('textarea.required:visible').each(function() {
       $(this).removeClass('error');
       if (jQuery.trim($(this).val()) === '') {
         $(this).addClass('error');
-        $(this).wiggle({
-          callback: (function(_this) {
-            return function() {
-              return $(_this).focus();
-            };
-          })(this)
-        });
-        error_free = false;
+        $(this).wiggle();
+        error_fields.push(this);
       }
     });
     form.find('select.required').each(function() {
       $(this).removeClass('error');
       if (this.selectedIndex === -1) {
         $(this).addClass('error');
-        $(this).wiggle({
-          callback: (function(_this) {
-            return function() {
-              $(_this).focus();
-            };
-          })(this)
-        });
-        error_free = false;
+        $(this).wiggle();
+        error_fields.push(this);
       }
     });
-    if (error_free) {
+    // Validate required JSONEditor fields
+    form.find('.editor_holder .required').each(function() {
+      var input = $(this).parent().find('input');
+      input.removeClass('error');
+      if (jQuery.trim(input.val()) === '') {
+        input.addClass('error');
+        input.wiggle();
+        error_fields.push(input);
+      }
+    });
+    if (error_fields.length){
+      $(error_fields[0]).focus();
+    }
+    else {
       map = this.getInputMap(form);
       isFileUpload = this.isFileUpload(form);
       opts = {
