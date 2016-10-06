@@ -4,8 +4,8 @@
   <div class="info_description markdown">{{{info.description}}}</div>
   <table id="info_table">
   {{#if info.version}}<tr class="info_version"><td>Version:</td><td>{{info.version}}</td></tr>{{/if}}
-  <tr class="info_spec"><td>Spec:</td><td><a href="../swagger.json">swagger.json</a></td></tr>
-  <tr class="info_spec"><td>Changelog:</td><td><a href="../swagger-changelog.md">swagger-changelog.md</a></td></tr>
+  <tr class="info_spec"><td>Spec:</td><td><a href="swagger.json">swagger.json</a></td></tr>
+  <tr class="info_spec"><td>Changelog:</td><td><a href="swagger-changelog.md">swagger-changelog.md</a></td></tr>
   {{#if externalDocs}}
   {{#if externalDocs.description}}<tr><td colspan="2">{{externalDocs.description}}</td></tr>{{/if}}
   {{#if externalDocs.url}}<tr class='info_url'><td>Docs:</td><td><a href="{{externalDocs.url}}" target="_blank">{{externalDocs.url}}</a></td></tr>{{/if}}

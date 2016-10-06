@@ -298,7 +298,7 @@ this["Handlebars"]["templates"]["main"] = Handlebars.template({"1":function(dept
   buffer += "</div>\n  <table id=\"info_table\">\n  ";
   stack1 = helpers['if'].call(depth0, ((stack1 = (depth0 != null ? depth0.info : depth0)) != null ? stack1.version : stack1), {"name":"if","hash":{},"fn":this.program(2, data),"inverse":this.noop,"data":data});
   if (stack1 != null) { buffer += stack1; }
-  buffer += "\n  <tr class=\"info_spec\"><td>Spec:</td><td><a href=\"../swagger.json\">swagger.json</a></td></tr>\n  <tr class=\"info_spec\"><td>Changelog:</td><td><a href=\"../swagger-changelog.md\">swagger-changelog.md</a></td></tr>\n";
+  buffer += "\n  <tr class=\"info_spec\"><td>Spec:</td><td><a href=\"swagger.json\">swagger.json</a></td></tr>\n  <tr class=\"info_spec\"><td>Changelog:</td><td><a href=\"swagger-changelog.md\">swagger-changelog.md</a></td></tr>\n";
   stack1 = helpers['if'].call(depth0, (depth0 != null ? depth0.externalDocs : depth0), {"name":"if","hash":{},"fn":this.program(4, data),"inverse":this.noop,"data":data});
   if (stack1 != null) { buffer += stack1; }
   buffer += "  ";
