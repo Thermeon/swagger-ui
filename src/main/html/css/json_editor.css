@@ -25,7 +25,6 @@
   margin: 0;
 }
 .swagger-section .swagger-ui-wrap .editor_holder .form-control {
-  display: table;
   width: 100%;
 }
 .swagger-section .swagger-ui-wrap .editor_holder .form-control label,
