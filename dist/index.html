@@ -30,23 +30,38 @@
   <!-- <script src='lang/en.js' type='text/javascript'></script> -->
 
   <script type="text/javascript">
-    $(function () {
-      var url = window.location.search.match(/url=([^&]+)/);
-      if (url && url.length > 1) {
-        url = decodeURIComponent(url[1]);
-      } else {
-        url = "/swagger.json";
-      }
+  $(function () {
+    var url = window.location.search.match(/url=([^&]+)/);
+    if (url && url.length > 1) {
+      url = decodeURIComponent(url[1]);
+    } else {
+      url = "/swagger.json";
+    }
+    var endpoint = window.location.search.match(/endpoint=([^&]+)/);
+    if(endpoint && endpoint.length > 1) {
+       endpoint = decodeURIComponent(endpoint[1]);
+       endpoint = endpoint.replace(/.*?:\/\//g, "");
+    } else {
+       endpoint = window.location.hostname;
+    }
+
+    $.getJSON(url, function(spec) {
+
+      spec.host = endpoint;
 
       // Pre load translate...
       if(window.SwaggerTranslator) {
         window.SwaggerTranslator.translate();
       }
       window.swaggerUi = new SwaggerUi({
-        url: url,
+        spec: spec,
+        validatorUrl: null,
         dom_id: "swagger-ui-container",
         supportedSubmitMethods: ['get', 'post', 'put', 'delete', 'patch'],
         onComplete: function(swaggerApi, swaggerUi){
+          var currentEndpoint = $('#current-endpoint');
+          currentEndpoint.val(endpoint);
+
           if(typeof initOAuth == "function") {
             initOAuth({
               clientId: "your-client-id",
@@ -100,6 +115,7 @@
           console.log.apply(console, arguments);
         }
       }
+    });
   });
   </script>
 </head>

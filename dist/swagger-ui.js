@@ -382,7 +382,7 @@ this["Handlebars"]["templates"]["main"] = Handlebars.template({"1":function(dept
   var stack1, buffer = "<div class='info' id='api_info'>\n";
   stack1 = helpers['if'].call(depth0, (depth0 != null ? depth0.info : depth0), {"name":"if","hash":{},"fn":this.program(1, data),"inverse":this.noop,"data":data});
   if (stack1 != null) { buffer += stack1; }
-  buffer += "  </table>\n</div>\n<div class='container' id='resources_container'>\n  <ul id='resources'></ul>\n\n  <div class=\"footer\">\n";
+  buffer += "  <tr class=\"info_spec\"><td>Test host:</td><td><form class=\"pure-form\" action=\"./\"><input id=\"current-endpoint\" placeholder=\"your-webservice.com\" name=\"endpoint\" type=\"text\" value=\"\"/> <input class=\"pure-button pure-button-primary\" type=\"submit\" value=\"Change\"/></form></td></tr>\n  </table>\n</div>\n<div class='container' id='resources_container'>\n  <ul id='resources'></ul>\n\n  <div class=\"footer\">\n";
   stack1 = helpers['if'].call(depth0, (depth0 != null ? depth0.validatorUrl : depth0), {"name":"if","hash":{},"fn":this.program(17, data),"inverse":this.noop,"data":data});
   if (stack1 != null) { buffer += stack1; }
   return buffer + "    </h4>\n    <img width=\"106\" height=\"39\" src=\"images/logo.png\" alt=\"Thermeon\">\n    </div>\n</div>\n";
