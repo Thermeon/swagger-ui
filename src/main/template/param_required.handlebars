@@ -1,6 +1,6 @@
 <td class='code required'><label for='{{valueId}}'>{{name}}</label></td>
-<td>
 	{{#if isBody}}
+<td colspan="2">
 		{{#if isFile}}
 			<input type="file" name='{{name}}' id='{{valueId}}'/>
 		{{else}}
@@ -17,6 +17,7 @@
 			{{/if}}
 		{{/if}}
 	{{else}}
+<td>
 		{{#if isFile}}
 			<input class='parameter' class='required' type='file' name='{{name}}' id='{{valueId}}'/>
 		{{else}}
@@ -25,8 +26,12 @@
 		{{/if}}
 	{{/if}}
 </td>
+	{{#if isBody}}
+<td>{{{paramType}}}</td>
+	{{else}}
 <td>
 	<strong><span class="markdown">{{{description}}}</span></strong>
 </td>
 <td>{{{paramType}}}</td>
+	{{/if}}
 <td><span class="model-signature"></span></td>

@@ -82,7 +82,7 @@
 .swagger-section pre .vhdl .attribute,
 .swagger-section pre .clojure .attribute,
 .swagger-section pre .coffeescript .property {
-  color: #8888ff;
+  color: #88F;
 }
 .swagger-section pre .keyword,
 .swagger-section pre .id,
@@ -122,7 +122,7 @@
 }
 .swagger-section .swagger-ui-wrap {
   line-height: 1;
-  font-family: "Droid Sans", sans-serif;
+  font-family: sans-serif;
   max-width: 960px;
   margin-left: auto;
   margin-right: auto;
@@ -130,7 +130,7 @@
 }
 .swagger-section .swagger-ui-wrap b,
 .swagger-section .swagger-ui-wrap strong {
-  font-family: "Droid Sans", sans-serif;
+  font-family: sans-serif;
   font-weight: bold;
 }
 .swagger-section .swagger-ui-wrap q,
@@ -276,7 +276,7 @@
   font-size: 25px;
 }
 .swagger-section .swagger-ui-wrap .footer {
-  margin-top: 20px;
+  margin-top: 40px;
 }
 .swagger-section .swagger-ui-wrap p.big,
 .swagger-section .swagger-ui-wrap div.big p {
@@ -289,27 +289,24 @@
 .swagger-section .swagger-ui-wrap form.fullwidth ol li.numeric input {
   width: 500px !important;
 }
-.swagger-section .swagger-ui-wrap .info_license {
-  padding-bottom: 5px;
-}
-.swagger-section .swagger-ui-wrap .info_tos {
-  padding-bottom: 5px;
-}
 .swagger-section .swagger-ui-wrap .message-fail {
   color: #cc0000;
-}
-.swagger-section .swagger-ui-wrap .info_url {
-  padding-bottom: 5px;
-}
-.swagger-section .swagger-ui-wrap .info_email {
-  padding-bottom: 5px;
-}
-.swagger-section .swagger-ui-wrap .info_name {
-  padding-bottom: 5px;
 }
 .swagger-section .swagger-ui-wrap .info_description {
   padding-bottom: 10px;
   font-size: 15px;
+}
+.swagger-section .swagger-ui-wrap #api_info {
+  margin-bottom: 20px;
+}
+.swagger-section .swagger-ui-wrap #info_table td {
+  border: none;
+  padding: 3px 6px 3px 0;
+}
+.swagger-section .swagger-ui-wrap #info_table tr td:first-child {
+  font-size: 0.8em;
+  color: #aaa;
+  vertical-align: bottom;
 }
 .swagger-section .swagger-ui-wrap .markdown ol li,
 .swagger-section .swagger-ui-wrap .markdown ul li {
@@ -334,7 +331,7 @@
   width: 100%;
 }
 .swagger-section .swagger-ui-wrap .model-signature {
-  font-family: "Droid Sans", sans-serif;
+  font-family: sans-serif;
   font-size: 1em;
   line-height: 1.5em;
 }
@@ -459,6 +456,14 @@
 .swagger-section .swagger-ui-wrap .required {
   font-weight: bold;
 }
+.swagger-section .swagger-ui-wrap td.required label:after,
+.swagger-section .swagger-ui-wrap .editor_holder label.required:after {
+  content: '*';
+  color: #D61313;
+  font-size: 0.5em;
+  position: relative;
+  top: -0.5em;
+}
 .swagger-section .swagger-ui-wrap .editor_holder {
   font-family: "Anonymous Pro", "Menlo", "Consolas", "Bitstream Vera Sans Mono", "Courier New", monospace;
   font-size: 0.9em;
@@ -479,7 +484,7 @@
   font-size: 1.5em;
   line-height: 1.3em;
   padding: 10px 0 10px 0;
-  font-family: "Droid Sans", sans-serif;
+  font-family: sans-serif;
   font-weight: bold;
 }
 .swagger-section .swagger-ui-wrap .heading_with_menu {
@@ -531,7 +536,7 @@
   font-family: "Anonymous Pro", "Menlo", "Consolas", "Bitstream Vera Sans Mono", "Courier New", monospace;
 }
 .swagger-section .swagger-ui-wrap form.formtastic fieldset.inputs ol li.text textarea {
-  font-family: "Droid Sans", sans-serif;
+  font-family: sans-serif;
   height: 250px;
   padding: 4px;
   display: block;
@@ -609,7 +614,7 @@
   margin: 20px 0 25px 0 !important;
 }
 .swagger-section .swagger-ui-wrap ul#resources {
-  font-family: "Droid Sans", sans-serif;
+  font-family: sans-serif;
   font-size: 0.9em;
 }
 .swagger-section .swagger-ui-wrap ul#resources li.resource {
@@ -682,7 +687,7 @@
   display: block;
   clear: none;
   float: left;
-  font-family: "Droid Sans", sans-serif;
+  font-family: sans-serif;
   font-weight: bold;
 }
 .swagger-section .swagger-ui-wrap ul#resources li.resource div.heading h2 a {
@@ -815,9 +820,12 @@
   clear: none;
   float: right;
 }
-.swagger-section .swagger-ui-wrap ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operation div.content form input[type='text'].error {
+.swagger-section .swagger-ui-wrap ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operation div.content form input.error {
   outline: 2px solid black;
   outline-color: #cc0000;
+}
+.swagger-section .swagger-ui-wrap ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operation div.content form select[name='parameterContentType'] {
+  max-width: 300px;
 }
 .swagger-section .swagger-ui-wrap ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operation div.content div.response div.block pre {
   font-family: "Anonymous Pro", "Menlo", "Consolas", "Bitstream Vera Sans Mono", "Courier New", monospace;
@@ -1046,7 +1054,7 @@
   padding: 10px 0;
   font-size: 0.8em;
   border-top: 1px solid #dddddd;
-  font-family: "Droid Sans", sans-serif;
+  font-family: sans-serif;
   color: #999999;
   font-style: italic;
 }
@@ -1061,7 +1069,7 @@
 }
 .swagger-section .swagger-ui-wrap .markdown ol,
 .swagger-section .swagger-ui-wrap .markdown ul {
-  font-family: "Droid Sans", sans-serif;
+  font-family: sans-serif;
   margin: 5px 0 10px;
   padding: 0 0 0 18px;
   list-style-type: disc;

@@ -2,29 +2,31 @@
   {{#if info}}
   <div class="info_title">{{info.title}}</div>
   <div class="info_description markdown">{{{info.description}}}</div>
+  <table id="info_table">
+  {{#if info.version}}<tr class="info_version"><td>Version:</td><td>{{info.version}}</td></tr>{{/if}}
+  <tr class="info_spec"><td>Spec:</td><td><a href="swagger.json">swagger.json</a></td></tr>
+  <tr class="info_spec"><td>Changelog:</td><td><a href="swagger-changelog.md">swagger-changelog.md</a></td></tr>
   {{#if externalDocs}}
-  <p>{{externalDocs.description}}</p>
-  <a href="{{externalDocs.url}}" target="_blank">{{externalDocs.url}}</a>
+  {{#if externalDocs.description}}<tr><td colspan="2">{{externalDocs.description}}</td></tr>{{/if}}
+  {{#if externalDocs.url}}<tr class='info_url'><td>Docs:</td><td><a href="{{externalDocs.url}}" target="_blank">{{externalDocs.url}}</a></td></tr>{{/if}}
   {{/if}}
-  {{#if info.termsOfServiceUrl}}<div class="info_tos"><a href="{{info.termsOfServiceUrl}}">Terms of service</a></div>{{/if}}
-  {{#if info.contact.name}}<div class='info_name'>Created by {{info.contact.name}}</div>{{/if}}
-  {{#if info.contact.url}}<div class='info_url'>See more at <a href="{{info.contact.url}}">{{info.contact.url}}</a></div>{{/if}}
-  {{#if info.contact.email}}<div class='info_email'><a href="mailto:{{info.contact.email}}?subject={{info.title}}">Contact the developer</a></div>{{/if}}
-  {{#if info.license}}<div class='info_license'><a href='{{info.license.url}}'>{{info.license.name}}</a></div>{{/if}}
+  {{#if info.termsOfServiceUrl}}<tr class="info_tos"><td>Terms of service:</td><td><a href="{{info.termsOfServiceUrl}}"></a></td></tr>{{/if}}
+  {{#if info.contact.url}}<tr class='info_url'><td colspan="2"><a href="{{info.contact.url}}">{{info.contact.url}}</a></td></tr>{{/if}}
+  {{#if info.contact.email}}<tr class='info_email'><td>Contact:</td><td><a href="mailto:{{info.contact.email}}?subject={{info.title}}">{{info.contact.email}}</a></td></tr>{{/if}}
+  {{#if info.license}}<tr class='info_license'><td>License:</td><td><a href='{{info.license.url}}'>{{info.license.name}}</a></td></tr>{{/if}}
   {{/if}}
+  <tr class="info_spec"><td>Test host:</td><td><form class="pure-form" action="./"><input id="current-endpoint" placeholder="your-webservice.com" name="endpoint" type="text" value=""/> <input class="pure-button pure-button-primary" type="submit" value="Change"/></form></td></tr>
+  </table>
 </div>
 <div class='container' id='resources_container'>
   <ul id='resources'></ul>
 
   <div class="footer">
-    <h4 style="color: #999">[ <span style="font-variant: small-caps">base url</span>: {{basePath}}
-    {{#if info.version}}
-    , <span style="font-variant: small-caps">api version</span>: {{info.version}}
-    {{/if}}]
     {{#if validatorUrl}}
     <span style="float:right"><a href="{{validatorUrl}}/debug?url={{url}}"><img id="validator" src="{{validatorUrl}}?url={{url}}"></a>
     </span>
     {{/if}}
     </h4>
+    <img width="106" height="39" src="images/logo.png" alt="Thermeon">
     </div>
 </div>

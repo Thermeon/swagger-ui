@@ -3,13 +3,13 @@
 .swagger-ui-wrap {
 
     line-height: 1;
-    font-family: "Droid Sans", sans-serif;
+    font-family: sans-serif;
     max-width: 960px;
     margin-left: auto;
     margin-right: auto;
 
     b, strong {
-        font-family: "Droid Sans", sans-serif;
+        font-family: sans-serif;
         font-weight: bold;
     }
 
@@ -154,7 +154,7 @@
     }
 
     .footer {
-        margin-top: 20px;
+        margin-top: 40px;
     }
 
     p.big, div.big p {
@@ -168,33 +168,29 @@
         }
     }
 
-    .info_license {
-        padding-bottom: 5px;
-    }
-
-    .info_tos {
-        padding-bottom: 5px;
-    }
-
     .message-fail {
         color: #cc0000;
-    }
-
-    .info_url {
-        padding-bottom: 5px;
-    }
-
-    .info_email {
-        padding-bottom: 5px;
-    }
-
-    .info_name {
-        padding-bottom: 5px;
     }
 
     .info_description {
         padding-bottom: 10px;
         font-size: 15px;
+    }
+
+    #api_info {
+        margin-bottom: 20px;
+    }
+
+    #info_table {
+        td {
+            border: none;
+            padding: 3px 6px 3px 0;
+        }
+        tr td:first-child {
+            font-size: 0.8em;
+            color: #aaa;
+            vertical-align: bottom;
+        }
     }
 
     .markdown ol li, .markdown ul li {
@@ -222,7 +218,7 @@
     }
 
     .model-signature {
-        font-family: "Droid Sans", sans-serif;
+        font-family: sans-serif;
         font-size: 1em;
         line-height: 1.5em;
         .signature-nav {
@@ -360,6 +356,14 @@
         font-weight: bold;
     }
 
+    td.required label:after, .editor_holder label.required:after {
+        content: '*';
+        color: #D61313;
+        font-size: 0.5em;
+        position: relative;
+        top: -0.5em;
+    }
+
     /* JSONEditor specific styling */
     .editor_holder {
        font-family: "Anonymous Pro", "Menlo", "Consolas", "Bitstream Vera Sans Mono", "Courier New", monospace;
@@ -383,7 +387,7 @@
         font-size: 1.5em;
         line-height: 1.3em;
         padding: 10px 0 10px 0;
-        font-family: "Droid Sans", sans-serif;
+        font-family: sans-serif;
         font-weight: bold;
     }
 
@@ -444,7 +448,7 @@
             ol {
                 li.text {
                     textarea {
-                        font-family: "Droid Sans", sans-serif;
+                        font-family: sans-serif;
                         height: 250px;
                         padding: 4px;
                         display: block;
@@ -537,7 +541,7 @@
     }
 
     ul#resources {
-        font-family: "Droid Sans", sans-serif;
+        font-family: sans-serif;
         font-size: 0.9em;
 
         li.resource {
@@ -613,7 +617,7 @@
                     display: block;
                     clear: none;
                     float: left;
-                    font-family: "Droid Sans", sans-serif;
+                    font-family: sans-serif;
                     font-weight: bold;
                     a {
                         color: #999999;
@@ -753,9 +757,12 @@
                                     }
                                 }
                                 form {
-                                    input[type='text'].error {
+                                    input.error {
                                         outline: 2px solid black;
                                         outline-color: #cc0000;
+                                    }
+                                    select[name='parameterContentType'] {
+                                        max-width:300px;
                                     }
                                 }
                                 div.response {
@@ -1063,7 +1070,7 @@
         padding: 10px 0;
         font-size: 0.8em;
         border-top: 1px solid #dddddd;
-        font-family: "Droid Sans", sans-serif;
+        font-family: sans-serif;
         color: #999999;
         font-style: italic;
         a {
@@ -1079,7 +1086,7 @@
     }
 
     .markdown ol, .markdown ul {
-        font-family: "Droid Sans", sans-serif;
+        font-family: sans-serif;
         margin: 5px 0 10px;
         padding: 0 0 0 18px;
         list-style-type: disc;
